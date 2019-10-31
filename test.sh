@@ -9,3 +9,4 @@ echo "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
 echo "Bug mismatch! ./lib/etypes.ex expected $bugs bugs."
 echo "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
 grep bug -a2 ./lib/etypes.ex
+exit -1
