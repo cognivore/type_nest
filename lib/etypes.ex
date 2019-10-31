@@ -25,7 +25,7 @@ defmodule Etypes do
     end
   end
 
-  # bug
+  # bug 
   @spec hello() :: T.comaybe(t) when t: non_neg_integer()
   def hello() do
     brokenByDesign(1)
@@ -34,5 +34,7 @@ defmodule Etypes do
     green(4)
     green(42)
   end
+  # ^._ this happens because hello/0 calls a function with a bug, which results
+  #     in confusing "No return value" error?
 
 end
