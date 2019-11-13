@@ -9,7 +9,7 @@ defmodule Lambda do
          :: integer
   def higher_order(f, x), do: f.(x)
 
-  @spec main() :: non_neg_integer 
+  @spec main() :: integer 
   def main() do
     higher_order(fn (x) -> -x end, 5)
   end
