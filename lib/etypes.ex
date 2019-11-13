@@ -25,6 +25,13 @@ defmodule Etypes do
     end
   end
 
+  # bug
+  # mk_int/1 phantoms `integer`, but we have annotated `main` to phantom `float`
+  @spec phantomBug() :: Phantom.phantom_t(float)
+  def phantomBug() do
+    Phantom.mk_int(%Phantom{a: 4, b: 2})
+  end
+
   # bug 
   @spec hello() :: T.comaybe(t) when t: non_neg_integer()
   def hello() do
