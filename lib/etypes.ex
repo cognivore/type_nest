@@ -11,9 +11,8 @@ defmodule Etypes do
 
   # bug
   @spec brokenMaybe(t) :: T.comaybe(t) when t: non_neg_integer()
-  def brokenMaybe(_x), do: "We should be as specific as possible!"
+  def brokenMaybe(_x), do: "If we are specific about type t, then dialyzer will find the error."
 
-  # bug
   @spec brokenArgument(t) :: T.comaybe(t) when t: non_neg_integer()
   def brokenArgument(x), do: x
 
@@ -37,7 +36,9 @@ defmodule Etypes do
   def hello() do
     brokenByDesign(1)
     brokenMaybe(2)
+    # bug
     brokenArgument(-3)
+    # This function asks for non_neg_integer
     green(4)
     green(42)
   end

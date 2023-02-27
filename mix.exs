@@ -21,7 +21,10 @@ defmodule Etypes.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:dialyxir, "~> 1.0.0-rc.7", only: [:dev], runtime: false}
+      {:dialyxir, github: "jeremyjh/dialyxir", branch: "master", only: :dev, runtime: false},
+      # Use algae and see how it works with dialyzer.
+      # We get it from github: https://github.com/doma-engineering/algae-goo.git
+      {:algae_goo, github: "doma-engineering/algae-goo", branch: "main"}
     ]
   end
 end

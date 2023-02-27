@@ -22,3 +22,8 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 etypes-*.tar
 
+# Ignore nix artifacts that are put into .direnv
+.direnv/
+
+# Sometimes we nix build the project. It creates a convenience `result` symlink. We ignore it.
+result
