@@ -1,7 +1,7 @@
 {
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs";
-        goo.url = "github:doma-engineering/goo";
+        goo.url = "github:doma-engineering/goo?ref=r24";
     };
 
     outputs = {self, nixpkgs, goo}:
@@ -12,7 +12,7 @@
             devShell.x86_64-linux =
                 pkgs.mkShell {
                     buildInputs = [
-                        pkgs.erlang
+                        pkgs.erlangR24
                         goo.defaultPackage.x86_64-linux
                     ];
                 };
