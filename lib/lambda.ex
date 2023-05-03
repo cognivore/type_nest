@@ -6,7 +6,9 @@ defmodule Lambda do
   alias Etypes.Types, as: T
 
   @spec higher_order(T.lambda(non_neg_integer, integer), non_neg_integer)
-         :: integer
+       :: integer
+  # @spec higher_order((non_neg_integer -> integer), non_neg_integer)
+  #       :: integer
   def higher_order(f, x), do: f.(x)
 
   @spec main() :: integer 
